@@ -2,34 +2,35 @@
 
 Ler 1 caractere Maiúsculo que indica uma operaçāo a ser realizada numa Matriz M[12][12]
 
-Em seguida calcule e mostre a soma ou a média considerando somente elementos na direita da Matriz, conforme a imagem
+Em seguida calcule e mostre a soma ou a média considerando somente elementos na direita da Matriz, conforme a imagem anexa.
 
-import java.io.IOException;
+
 import java.util.Scanner;
 
-public class Desafio Matriz {
-	
-    public static void main(String[] args) throws IOException {
-        Scanner leitor = new Scanner(System.in);
-        double soma = 0;
-        char O = leitor.next().toUpperCase().charAt(0);
-        double[][] M = new double[12][12];
-        for (int i = 0; i < M.length; i++) {
-        	for (int j = 0; j < M[i] . length; j++) {
-        		M[i][j] = leitor.nextDouble();
-        	}
+public class Desafio {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double m[][] = new double[12][12];
+        double sum = 0;
+        int count = 0;
+        String v = sc.next();
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                double x = sc.nextDouble();
+                m[i][j] = x;
+                if (j > m.length - i - 1 && i < j) {
+                    sum += x;
+                    count++;
+                }
+            }
         }
-        
-        for (int i = 0; i < M.length; i++) {
-        	for (int j = 0; j < M[i].lenght; j++) {
-        		if (j < i && j > M.length;-i-1) soma += M[i] [j];
-        	}
+        if (v.equals("S")) {
+            System.out.printf("%.1f\n", sum);
+        } else {
+            System.out.printf("%.1f\n", (sum / count));
         }
-
-        if (0 == 'M') soma /= 30;
-    	System.out.println(String.format("%.1f", soma));
     }
-	
 }
+
 
 
